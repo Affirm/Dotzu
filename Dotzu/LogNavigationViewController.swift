@@ -14,8 +14,8 @@ class LogNavigationViewController: UINavigationController {
         super.viewDidLoad()
 
         navigationBar.tintColor = Color.mainGreen
-        navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 20),
-                                             NSForegroundColorAttributeName: Color.mainGreen]
+        navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.font.rawValue: UIFont.boldSystemFont(ofSize: 20),
+                                             NSAttributedString.Key.foregroundColor.rawValue: Color.mainGreen])
 
         let selector = #selector(LogNavigationViewController.exit)
 
@@ -28,4 +28,10 @@ class LogNavigationViewController: UINavigationController {
     @objc func exit() {
         dismiss(animated: true, completion: nil)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }

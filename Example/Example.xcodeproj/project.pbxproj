@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41DF0B4A225E75AB00455F38 /* Dotzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FD9D7A225E3BB800282D57 /* Dotzu.framework */; };
+		41DF0B4E225E75B000455F38 /* Dotzu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41FD9D7A225E3BB800282D57 /* Dotzu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41DF0B4F225E75BC00455F38 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAA51AB1E48867800B91501 /* Alamofire.framework */; };
 		BB76CC2D1E45CC2400CA1488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB76CC2C1E45CC2400CA1488 /* Assets.xcassets */; };
 		BB76CC301E45CC2400CA1488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB76CC2E1E45CC2400CA1488 /* LaunchScreen.storyboard */; };
 		BB76CC3B1E45CC5500CA1488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76CC371E45CC5500CA1488 /* AppDelegate.swift */; };
@@ -14,9 +17,6 @@
 		BB76CC3D1E45CC5500CA1488 /* LogTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76CC391E45CC5500CA1488 /* LogTestTableViewController.swift */; };
 		BB76CC3E1E45CC5500CA1488 /* RequestTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76CC3A1E45CC5500CA1488 /* RequestTestTableViewController.swift */; };
 		BB76CC401E45CC5F00CA1488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB76CC3F1E45CC5F00CA1488 /* Main.storyboard */; };
-		BB76CC421E45CC6500CA1488 /* Dotzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB76CC411E45CC6500CA1488 /* Dotzu.framework */; };
-		BB76CC431E45CC6500CA1488 /* Dotzu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BB76CC411E45CC6500CA1488 /* Dotzu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BBAA51AC1E48867800B91501 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAA51AB1E48867800B91501 /* Alamofire.framework */; };
 		BBAA51AD1E48867800B91501 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBAA51AB1E48867800B91501 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBD93F1E1E7D46CF00EF9026 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD93F1D1E7D46CF00EF9026 /* RootTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,8 +28,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BB76CC431E45CC6500CA1488 /* Dotzu.framework in Embed Frameworks */,
 				BBAA51AD1E48867800B91501 /* Alamofire.framework in Embed Frameworks */,
+				41DF0B4E225E75B000455F38 /* Dotzu.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41FD9D7A225E3BB800282D57 /* Dotzu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Dotzu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB76CC221E45CC2400CA1488 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB76CC2C1E45CC2400CA1488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB76CC2F1E45CC2400CA1488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		BB76CC391E45CC5500CA1488 /* LogTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTestTableViewController.swift; sourceTree = "<group>"; };
 		BB76CC3A1E45CC5500CA1488 /* RequestTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTestTableViewController.swift; sourceTree = "<group>"; };
 		BB76CC3F1E45CC5F00CA1488 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		BB76CC411E45CC6500CA1488 /* Dotzu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Dotzu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAA51AB1E48867800B91501 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 		BBD93F1D1E7D46CF00EF9026 /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,21 +56,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB76CC421E45CC6500CA1488 /* Dotzu.framework in Frameworks */,
-				BBAA51AC1E48867800B91501 /* Alamofire.framework in Frameworks */,
+				41DF0B4A225E75AB00455F38 /* Dotzu.framework in Frameworks */,
+				41DF0B4F225E75BC00455F38 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BB76CC191E45CC2400CA1488 = {
+		41FD9D79225E3BB800282D57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				BBAA51AB1E48867800B91501 /* Alamofire.framework */,
-				BB76CC411E45CC6500CA1488 /* Dotzu.framework */,
+				41FD9D7A225E3BB800282D57 /* Dotzu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB76CC191E45CC2400CA1488 = {
+			isa = PBXGroup;
+			children = (
 				BB76CC241E45CC2400CA1488 /* Example */,
 				BB76CC231E45CC2400CA1488 /* Products */,
+				41FD9D79225E3BB800282D57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,7 +139,7 @@
 				TargetAttributes = {
 					BB76CC211E45CC2400CA1488 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 44Q2J6374R;
+						DevelopmentTeam = YD484U2GCW;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -142,6 +150,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -224,7 +233,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -245,7 +253,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -281,7 +289,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -307,7 +314,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 44Q2J6374R;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YD484U2GCW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -317,8 +326,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = remi.robert.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -327,7 +337,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 44Q2J6374R;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YD484U2GCW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -337,7 +349,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = remi.robert.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

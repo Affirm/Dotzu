@@ -9,7 +9,6 @@
 import UIKit
 import Dotzu
 import Alamofire
-import Dotzu
 
 class RequestTestTableViewController: UITableViewController {
 
@@ -41,7 +40,7 @@ class RequestTestTableViewController: UITableViewController {
             request.httpBody = data
             request.httpMethod = "POST"
             task = session.dataTask(with: request as URLRequest, completionHandler: { _, response, error in
-                Logger.info("response for url : [\(url)] : \(response)")
+                Logger.info("response for url : [\(url)] : \(String(describing: response))")
             })
             task?.resume()
         }
@@ -66,7 +65,7 @@ class RequestTestTableViewController: UITableViewController {
             request.setValue("\(Date().timeIntervalSinceNow)", forHTTPHeaderField: "date")
             request.httpMethod = "GET"
             task = session.dataTask(with: request as URLRequest, completionHandler: { _, response, error in
-                Logger.info("response for url : [\(url)] : \(response)")
+                Logger.info("response for url : [\(url)] : \(String(describing:response))")
             })
             task?.resume()
         } else {

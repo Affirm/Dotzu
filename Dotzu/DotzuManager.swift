@@ -57,14 +57,14 @@ public class Dotzu: NSObject {
                 init(action:@escaping () -> ()) {
                     self.action = action
                 }
-                func invokeTarget(nizer: UIGestureRecognizer) {
+                @objc func invokeTarget(nizer: UIGestureRecognizer) {
                     self.action()
                     print("Hi from invoker")
                 }
             }
         recognizer.addTarget(Invoker(action: {
                 self.setButtonVisible(visible: !self.controller.button.isHidden)
-            }), action: "invokeTarget:")
+        }), action: #selector(Invoker.invokeTarget(nizer:)))
 
     }
 
