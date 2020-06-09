@@ -54,8 +54,7 @@ public class Logger: LogGenerator {
         let stringContent = (items.first as? [Any] ?? []).reduce("") { result, next -> String in
             return "\(result)\(result.count > 0 ? " " : "")\(next)"
         }
-
-        Logger.shared.queue.async {
+        Logger.shared.queue.async(flags: .barrier) {
             let newLog = Log(content: stringContent, fileInfo: fileInfo, level: level)
             let format = LoggerFormat.format(log: newLog)
             Swift.print(format.str)
