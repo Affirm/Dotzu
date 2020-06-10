@@ -47,6 +47,12 @@ public class Logger: LogGenerator {
     }
 
     #if false
+
+    // Edward: June 10, 2020
+    // There is a multi-threaded memory problem in here somewhere that need to be fixed.
+    // An object is being passed by reference to the async block that needs to be copied instead.
+    // Rather than spend time figuring it out, I made the thread `sync(flags: .barrier)`. See below:
+
     fileprivate static func handleLog(_ items: Any..., level: LogLevel, file: String?, function: String?, line: Int?) {
         if !Logger.shared.enable {
             return
@@ -64,7 +70,9 @@ public class Logger: LogGenerator {
         LogNotificationApp.newLog.post(level)
         LogNotificationApp.refreshLogs.post(Void())
     }
+
     #else
+    
     fileprivate static func handleLog(_ items: Any..., level: LogLevel, file: String?, function: String?, line: Int?) {
         Logger.shared.queue.sync(flags: .barrier) {
             if !Logger.shared.enable {
