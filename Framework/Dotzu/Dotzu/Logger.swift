@@ -46,6 +46,7 @@ public class Logger: LogGenerator {
         return "\(fileName).\(function)[\(line)]"
     }
 
+    #if false
     fileprivate static func handleLog(_ items: Any..., level: LogLevel, file: String?, function: String?, line: Int?) {
         if !Logger.shared.enable {
             return
@@ -63,4 +64,23 @@ public class Logger: LogGenerator {
         LogNotificationApp.newLog.post(level)
         LogNotificationApp.refreshLogs.post(Void())
     }
+    #else
+    fileprivate static func handleLog(_ items: Any..., level: LogLevel, file: String?, function: String?, line: Int?) {
+        Logger.shared.queue.sync(flags: .barrier) {
+            if !Logger.shared.enable {
+                return
+            }
+            let fileInfo = parseFileInfo(file: file, function: function, line: line)
+            let stringContent = (items.first as? [Any] ?? []).reduce("") { result, next -> String in
+                return "\(result)\(result.count > 0 ? " " : "")\(next)"
+            }
+            let newLog = Log(content: stringContent, fileInfo: fileInfo, level: level)
+            let format = LoggerFormat.format(log: newLog)
+            Swift.print(format.str)
+            Logger.shared.store.add(log: newLog)
+            LogNotificationApp.newLog.post(level)
+            LogNotificationApp.refreshLogs.post(Void())
+        }
+    }
+    #endif
 }
